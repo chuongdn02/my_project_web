@@ -1,0 +1,358 @@
+/* styles.css */
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+/* Header */
+.header {
+  background-color: #cf7070;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+    margin: 20px;
+; /* Add margin to the left */
+    width: 100px; /* Adjust the width to your desired size */
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    border-radius: 50%;
+    animation: rotateAndScaleLogo 3s linear infinite; /* Increase the animation duration */
+  }
+  
+  @keyframes rotateAndScaleLogo {
+    0% {
+      transform: rotateY(0deg) scale(1);
+    }
+    50% {
+      transform: rotateY(180deg) scale(1.2);
+    }
+    100% {
+      transform: rotateY(360deg) scale(1);
+    }
+  }
+  
+  
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item {
+  margin: 10px;
+}
+
+.navbar-link {
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Toggle navigation menu */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Show navigation menu on small screens */
+/* Show navigation menu on small screens */
+@media screen and (max-width: 768px) {
+    .navbar-menu {
+      display: none;
+      flex-direction: column;
+      position: fixed; /* Thay đổi từ absolute thành fixed */
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f8f8f8;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 99;
+      transform: translateY(-100%); /* Thêm transform để tạo hiệu ứng cuộn */
+      transition: transform 0.3s ease; /* Thêm transition để tạo hiệu ứng mượt */
+    }
+  
+    .navbar-menu.active {
+      display: flex;
+      transform: translateY(0); /* Thêm transform để tạo hiệu ứng cuộn */
+    }
+  
+    .navbar-item {
+      margin: 10px 0;
+    }
+  
+    .navbar-toggle {
+      display: block;
+    }
+  }
+  
+
+/* About */
+.about-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.about-text {
+  margin-left: 40px;
+}
+
+.about-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.about-description {
+  margin-bottom: 20px;
+}
+
+.about-button {
+  display: inline-block;
+  background-color: #ff5500;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+/* Skills */
+.skills-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.skill {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.skill-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.skill-progress {
+  height: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-progress-bar {
+  height: 100%;
+  background-color: #333;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.skill:hover .skill-progress-bar {
+  width: 120%;
+}
+
+.skill-percentage {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  color: #333;
+  font-weight: 700;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.skill:hover .skill-percentage {
+  opacity: 1;
+}
+
+/* Services */
+.services-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+}
+
+.service {
+  text-align: center;
+}
+
+.service-icon {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.service-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.service-description {
+  margin-bottom: 20px;
+}
+
+/* Projects */
+.projects-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+}
+
+.project {
+  text-align: center;
+}
+
+.project-img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  margin-bottom: 20px;
+}
+
+/* Contact */
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px;
+}
+
+.contact-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.contact-button {
+  display: inline-block;
+  background-color: #ff5500;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 14px;
+}
+
+/* Scroll to top button */
+#scroll-up {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #333;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#scroll-up.show {
+  opacity: 1;
+  visibility: visible;
+}
+/* styles.css */
+
+@keyframes shake {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    75% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  .shake-image {
+    animation: shake 1s infinite;
+  }
+  

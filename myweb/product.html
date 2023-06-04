@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chi tiết sản phẩm</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Chi tiết sản phẩm</h1>
+  </header>
+  <div class="container">
+    <div id="product-details"></div>
+    <a class="btn" href="index.html">Quay lại</a>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    var productId = parseInt(location.search.split("=")[1]);
+    showProductDetails(productId);
+  </script>
+</body>
+</html>
